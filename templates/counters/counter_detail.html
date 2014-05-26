@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distributed Counters</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<h1>{{ counter.name }}</h1>
+<h4>ID: {{ counter.id }}</h4>
+<h3>Value: {{ counter.value }}</h3>
+
+<form action="increase" method="get" class="form-inline">
+    {% csrf_token %}
+    Increase by: <input type="number" name="increase" class="form-control" value="1"/>
+    <input type="submit" value="Increase" class="btn btn-default"/>
+    <a href="reset/" class="btn btn-default">Reset counter</a>
+</form>
+
+    <br/><br/><br/>
+    <a href="/"><span class="glyphicon glyphicon-chevron-left"></span>Back To All Counters</a>
+</div>
+</body>
+</html>

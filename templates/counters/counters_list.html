@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distributed Counters</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Distributed Counters List</h1>
+    {% for counter in counters %}
+        <p><a href="{% url 'counter_detail' counter.id %}"> {{ counter.name }}</a> - {{ counter.value }}</p>
+    {% endfor %}
+    <a href="add"><button class="btn btn-default">Add New Counter</button></a>
+    </div>
+</body>
+</html>
+
